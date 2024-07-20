@@ -13,9 +13,7 @@ Routes::post('/signup', [AuthController::class, 'signup'], 'auth.signup.process'
 Routes::get('/logout', [AuthController::class, 'logout'], 'auth.logout');
 
 
-Routes::get('/dashboard', function () {
-    return view('auth/dashboard');
-}, 'home', [AuthMiddleware::class]);
+
 
 // Blog Management
 

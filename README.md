@@ -1,17 +1,32 @@
-# Blog Website
-1. Install the LIL.PHP
-   `git clone https://github.com/imp-sike/lil.php blog_platform`
-2. Change `config/ConfigClass.php`
-```php
-class ConfigClass {
-    public static $db_host = "localhost";
-    public static $db_name = "blog_lilphp";   // <-- changed this
-    public static $db_port = "3306";
-    public static $db_uname = "root";
-    public static $db_pass = "";
-    public static $base_uri = "/lil.php-examples/blog";  // <-- changed this
-}
-```
-3. Create and run the migration file
-4. Create models
-5. Create views and controllers
+# Sample Blog Website with LilPHP
+
+Welcome to the Sample Blog Website built using the LilPHP framework. This project demonstrates how to create a simple blog with functionalities including user authentication, post creation, editing, and viewing.
+
+## Features
+
+- **User Authentication**: Register, login, and manage user sessions.
+- **Post Management**: Create, edit, and view blog posts.
+
+## Screenshots
+
+Here are some screenshots of the blog website:
+
+- **Create Post**
+  ![Create Post](screenshots/create.png)
+  *Description*: A screenshot of the 'Create Post' page where users can draft new blog posts.
+
+- **Login**
+  ![Login](screenshots/login.png)
+  *Description*: The login page where users can access their accounts.
+
+- **Signup**
+  ![Signup](screenshots/signup.png)
+  *Description*: The signup page for new users to register.
+
+- **Edit Post**
+  ![Edit Post](screenshots/edit.png)
+  *Description*: The page where users can edit existing blog posts.
+
+- **View Post**
+  ![View Post](screenshots/view.png)
+  *Description*: A view of a published blog post.

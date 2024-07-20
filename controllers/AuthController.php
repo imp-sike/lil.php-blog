@@ -27,7 +27,7 @@ class AuthController extends Controller {
             session_start();
             // Assuming user authentication is successful
             $_SESSION['user'] = $user[0];
-            return redirect(route('home'));
+            return redirect(route('admin.blog.index'));
         }
 
         return redirect(route('auth.login', ['error' => 'Invalid Email or Password.']));
