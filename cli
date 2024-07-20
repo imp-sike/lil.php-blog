@@ -1,0 +1,67 @@
+<?php
+if ($argc < 3) {
+    echo "Usage: php cli.php make:{command} {name}\n";
+    exit(1);
+}
+
+$command = $argv[1];
+$name = $argv[2];
+$table = strtolower($argv[2]);
+
+switch ($command) {
+    case 'make:model':
+        $content = "<?php
+
+namespace App\Model;
+
+use Lil\Model;
+
+class {$name} extends Model {
+    protected \$table = '{$table}';
+
+    protected \$fillable = [];
+}
+
+";
+        file_put_contents(__DIR__ . "/models/{$name}.php", $content);
+        echo "Model {$name} created successfully.\n";
+        break;
+
+    case 'make:controller':
+        $content = "<?php
+
+namespace App\Controller;
+
+use Lil\Controller;
+
+class {$name} extends Controller {
+    // Add controller methods here
+}
+
+";
+        file_put_contents(__DIR__ . "/controllers/{$name}.php", $content);
+        echo "Controller {$name} created successfully.\n";
+        break;
+
+    case 'make:middleware':
+        $content = "<?php
+
+namespace App\Middleware;
+
+use Lil\Middleware;
+
+class {$name}Middleware implements Middleware {
+    public function Run() {
+        // Your middleware logic here
+    }
+}
+
+";
+        file_put_contents(__DIR__ . "/middlewares/{$name}Middleware.php", $content);
+        echo "Middleware {$name} created successfully.\n";
+        break;
+
+    default:
+        echo "Command not recognized.\n";
+        exit(1);
+}

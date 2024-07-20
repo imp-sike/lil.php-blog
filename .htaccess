@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /lil.php-examples/blog
+    
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [L]
+
+    RewriteRule .* - [e=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+</IfModule>
